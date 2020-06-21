@@ -11,9 +11,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="BLL\" />
     <Folder Include="DATA\" />
-    <Folder Include="UI\" />
   </ItemGroup>
 
   <ItemGroup>
