@@ -5,7 +5,7 @@ using System.Text;
 
 namespace RegistroPrestamoDetalle.Entidades
 {
-    public class MorasDetalle
+    public class MorasDetalle//ESTA CLASE NO DEBE SER INCLUIDA EN EL CONTEXTO
     {
         [Key]
         public int MoraId { get; set; }
@@ -13,6 +13,8 @@ namespace RegistroPrestamoDetalle.Entidades
         public int PrestamoId { get; set; }
         public double Valor { get; set; }
 
+        //A DIFERENCIA DE LA CLASE Moras ESTA LLEVA DOS CONTRUCTORES
+        //La tabla detalle lleva dos constructores
         public MorasDetalle()
         {
             MoraId = 0;
