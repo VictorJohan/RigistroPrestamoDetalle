@@ -10,7 +10,7 @@
         <StackPanel>
             <Menu>
                 <MenuItem Header="Registros">
-                    <MenuItem Header="Prestamo"/>
+                    <MenuItem Header="Prestamo" Click="MenuItem_Click"/>
                 </MenuItem>
             </Menu>
         </StackPanel>

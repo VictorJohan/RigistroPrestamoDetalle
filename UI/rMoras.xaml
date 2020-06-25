@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RegistroPrestamoDetalle.UI"
         mc:Ignorable="d"
-        Title="Moras" Height="450" Width="800">
+        Title="Moras" Height="558" Width="401" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize">
     <Grid>
         <StackPanel Orientation="Vertical" Margin="10,10,10,10">
             <Label Content="MoraId" FontSize="11"/>
@@ -15,7 +15,7 @@
                 <!--Text Box-->
                 <TextBox Name="MoraIdTextBox" Width="100" Height="20" Margin="5,0"/>
                 <!--Boton-->
-                <Button Name="BuscarMoraId" Width="60" Height="20" Margin="5,0">
+                <Button Name="BuscarMoraIdButton" Width="60" Height="20" Margin="5,0" Click="BuscarMoraIdButton_Click">
                     <StackPanel Orientation="Horizontal">
                         <Image Source="/Resources/search.png" />
                         <Label Content="Buscar" Margin="4,0" Padding="-1"/>
@@ -24,15 +24,84 @@
             </StackPanel>
 
             <Label Content="Fecha" FontSize="11"/>
-            <DatePicker Name="FechaDatePicker" Width="170" Height="20" Padding="-1" HorizontalAlignment="Left" Margin="5,0"/>
+            <DatePicker Name="FechaDatePicker" Width="329" Height="20" Padding="-1" HorizontalAlignment="Left" Margin="5,0"/>
 
             <Label Content="Total" FontSize="11"/>
-            <TextBox Name="TotalTextBox" Width="170" Height="20" IsReadOnly="True" HorizontalAlignment="Left" Margin="5,0"/>
+            <TextBox Name="TotalTextBox" Width="329" Height="20" IsReadOnly="True" HorizontalAlignment="Left" Margin="5,0"/>
+            
+            <!--Group Box de MorasDetalle-->
+            <GroupBox Header="Detalles de Moras" BorderBrush="#FF414649" HorizontalAlignment="Left" Margin="5,10,5,0" Width="353">
+                <StackPanel Orientation="Vertical">
+                    <!--Id-->
+                    <Label Content="Id" FontSize="11"/>
+                    <TextBox Name="IdTextBox" Width="329" Height="20" Margin="5,0" HorizontalAlignment="Left"/>
+                    <!--MoraId-->
+                    <Label Content="MoraId" FontSize="11"/>
+                    <TextBox Name="MoraIdDetalleTextBox" Width="329" Height="20" Margin="5,0" HorizontalAlignment="Left"/>
+                    <!--PrestamoId-->
+                    <Label Content="PrestamoId" FontSize="11"/>
+                    <TextBox Name="PrestamoIdTextBox" Width="329" Height="20" Margin="5,0" HorizontalAlignment="Left"/>
+                    <!--Label Valor-->
+                    <Label Content="Valor" FontSize="11"/>
+                    
+                    <!--Stack Panel/Boton Agregar/Boton Remover-->
+                    <StackPanel Orientation="Horizontal">
+                        <!--TextBox Valor-->
+                        <TextBox Name="ValorTextBox" Width="170" Height="20" Margin="5,0" HorizontalAlignment="Left"/>
+                        <!--Boton Agregar-->
+                        <Button Name="AgregarButton" Width="74" Height="20" Click="AgregarButton_Click">
+                            <StackPanel Orientation="Horizontal">
+                                <Image Source="/Resources/agregar.png" />
+                                <Label Content="Agregar" Padding="-1"  Margin="4,0"/>
+                            </StackPanel>
+                        </Button>
+                        <!--Boton Remover-->
+                        <Button Name="RemoverButton" Width="74" Height="20" Margin="5,0" Click="RemoverButton_Click">
+                            <StackPanel Orientation="Horizontal">
+                                <Image Source="/Resources/remover.png" />
+                                <Label Content="Remover" Padding="-1" Margin="4,0"/>
+                            </StackPanel>
+                        </Button>
+                    </StackPanel>
 
-            <GroupBox Header="Detalles de Moras">
-                
+                    <DataGrid Name="DetalleDataGrid" Height="100" HorizontalAlignment="Left" AutoGenerateColumns="False" Margin="5,5,5,0" ItemsSource="{Binding MorasDetalle}" Width="328">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Id" Binding="{Binding Id}"/>
+                            <DataGridTextColumn Header="MoraId" Binding="{Binding MoraId}"/>
+                            <DataGridTextColumn Header="PrestamoId" Binding="{Binding PrestamoId}"/>
+                            <DataGridTextColumn Header="Valor" Binding="{Binding Valor}"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                    
+                </StackPanel>
             </GroupBox>
+            
+            <!--Stack Panel/Buton Nuevo/Boton Guardar/Boton Eliminar-->
+            <StackPanel Orientation="Horizontal" Width="237" HorizontalAlignment="Left" Margin="68,17,0,0">
+                <!--Boton Nuevo-->
+                <Button Name="NuevoButon" Width="60" Height="20" Click="NuevoButton_Click">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="/Resources/deuda.png" />
+                        <Label Content="Nuevo" Padding="-1" Margin="4,0"/>
+                    </StackPanel>
+                </Button>
+                <!--Boton Guardar-->
+                <Button Name="GuardarButton" Width="67" Height="20" Margin="20,0,20,0" Click="GuardarButton_Click">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="/Resources/save.png" />
+                        <Label Content="Guardar" Padding="-1" Margin="4,0"/>
+                    </StackPanel>
+                </Button>
+                <!--Boton Eliminar-->
+                <Button Name="EliminarButton" Width="67" Height="20"  Click="EliminarButton_Click">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="/Resources/delete.png" />
+                        <Label Content="Eliminar" Padding="-1" Margin="4,0"/>
+                    </StackPanel>
+                </Button>
 
+            </StackPanel>
+            
         </StackPanel>
     </Grid>
 </Window>

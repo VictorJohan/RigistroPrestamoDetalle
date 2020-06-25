@@ -11,8 +11,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Resources\agregar.png" />
     <None Remove="Resources\delete.png" />
+    <None Remove="Resources\deuda.png" />
     <None Remove="Resources\prestamo.png" />
+    <None Remove="Resources\remover.png" />
     <None Remove="Resources\save.png" />
     <None Remove="Resources\search.png" />
   </ItemGroup>
@@ -30,8 +33,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Resources\agregar.png" />
     <Resource Include="Resources\delete.png" />
+    <Resource Include="Resources\deuda.png" />
     <Resource Include="Resources\prestamo.png" />
+    <Resource Include="Resources\remover.png" />
     <Resource Include="Resources\save.png" />
     <Resource Include="Resources\search.png" />
   </ItemGroup>

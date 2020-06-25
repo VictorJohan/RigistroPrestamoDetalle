@@ -16,7 +16,7 @@ namespace RegistroPrestamoDetalle.Entidades
         //aqui se le esta pasando una llave foranea a la clase MorasDetalle(Tabla)
         //es la Primary Key de esta misma clase(Tabla)
         [ForeignKey("MoraId")]
-        public virtual List<MorasDetalle> MorasDetalles { get; set; }
+        public virtual List<MorasDetalle> MorasDetalle { get; set; }
 
     }
 }
