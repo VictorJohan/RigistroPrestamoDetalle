@@ -9,7 +9,7 @@ using RegistroPrestamoDetalle.DAL;
 namespace RegistroPrestamoDetalle.Migrations
 {
     [DbContext(typeof(Contexto))]
-    [Migration("20200621054221_Migracion_Inicial")]
+    [Migration("20200625042803_Migracion_Inicial")]
     partial class Migracion_Inicial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -37,10 +37,11 @@ namespace RegistroPrestamoDetalle.Migrations
 
             modelBuilder.Entity("RegistroPrestamoDetalle.Entidades.MorasDetalle", b =>
                 {
-                    b.Property<int>("MoraId")
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("Id")
+                    b.Property<int>("MoraId")
                         .HasColumnType("INTEGER");
 
                     b.Property<int>("PrestamoId")
@@ -49,7 +50,9 @@ namespace RegistroPrestamoDetalle.Migrations
                     b.Property<double>("Valor")
                         .HasColumnType("REAL");
 
-                    b.HasKey("MoraId");
+                    b.HasKey("Id");
+
+                    b.HasIndex("MoraId");
 
                     b.ToTable("MorasDetalle");
                 });

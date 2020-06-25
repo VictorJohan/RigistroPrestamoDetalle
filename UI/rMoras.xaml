@@ -5,8 +5,34 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RegistroPrestamoDetalle.UI"
         mc:Ignorable="d"
-        Title="rMoras" Height="450" Width="800">
+        Title="Moras" Height="450" Width="800">
     <Grid>
-        
+        <StackPanel Orientation="Vertical" Margin="10,10,10,10">
+            <Label Content="MoraId" FontSize="11"/>
+            
+            <!--Dentro de este Stack Panel se encuntra el Text Box MoraId y el boton Buscar MoraId-->
+            <StackPanel Orientation="Horizontal">
+                <!--Text Box-->
+                <TextBox Name="MoraIdTextBox" Width="100" Height="20" Margin="5,0"/>
+                <!--Boton-->
+                <Button Name="BuscarMoraId" Width="60" Height="20" Margin="5,0">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="/Resources/search.png" />
+                        <Label Content="Buscar" Margin="4,0" Padding="-1"/>
+                    </StackPanel>
+                </Button>
+            </StackPanel>
+
+            <Label Content="Fecha" FontSize="11"/>
+            <DatePicker Name="FechaDatePicker" Width="170" Height="20" Padding="-1" HorizontalAlignment="Left" Margin="5,0"/>
+
+            <Label Content="Total" FontSize="11"/>
+            <TextBox Name="TotalTextBox" Width="170" Height="20" IsReadOnly="True" HorizontalAlignment="Left" Margin="5,0"/>
+
+            <GroupBox Header="Detalles de Moras">
+                
+            </GroupBox>
+
+        </StackPanel>
     </Grid>
 </Window>

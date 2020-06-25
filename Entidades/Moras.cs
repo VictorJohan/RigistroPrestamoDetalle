@@ -10,7 +10,7 @@ namespace RegistroPrestamoDetalle.Entidades
     {
         [Key]
         public int MoraId { get; set; }
-        public DateTime Fecha { get; set; }
+        public DateTime Fecha { get; set; } = DateTime.Now;
         public double Total { get; set; }
 
         //aqui se le esta pasando una llave foranea a la clase MorasDetalle(Tabla)
@@ -18,13 +18,5 @@ namespace RegistroPrestamoDetalle.Entidades
         [ForeignKey("MoraId")]
         public virtual List<MorasDetalle> MorasDetalles { get; set; }
 
-        public Moras()//en este constructor se deben inicializar las propiedades creadas en esta clase
-        {
-            MoraId = 0;
-            Fecha = DateTime.Now;
-            Total = 0;
-            MorasDetalles = new List<MorasDetalle>();
-        }
-        
     }
 }
