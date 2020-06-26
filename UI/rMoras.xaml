@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RegistroPrestamoDetalle.UI"
         mc:Ignorable="d"
-        Title="Moras" Height="558" Width="401" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize">
+        Title="Moras" Height="558" Width="382" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize">
     <Grid>
         <StackPanel Orientation="Vertical" Margin="10,10,10,10">
             <Label Content="MoraId" FontSize="11"/>
@@ -30,24 +30,24 @@
             <TextBox Name="TotalTextBox" Width="329" Height="20" IsReadOnly="True" Text="{Binding Total}" HorizontalAlignment="Left" Margin="5,0"/>
             
             <!--Group Box de MorasDetalle-->
-            <GroupBox Header="Detalles de Moras" BorderBrush="#FF414649" HorizontalAlignment="Left" Margin="5,10,5,0" Width="353">
+            <GroupBox Header="Detalles de Moras" BorderBrush="#FF414649" HorizontalAlignment="Left" Margin="5,10,5,0" Width="329">
                 <StackPanel Orientation="Vertical">
                     <!--Id-->
                     <Label Content="Id" FontSize="11"/>
-                    <TextBox Name="IdTextBox" Width="329" Height="20" Margin="5,0" Text="{Binding Detalle.Id}" HorizontalAlignment="Left"/>
+                    <TextBox Name="IdTextBox" Width="301" Height="20" Margin="5,0" Text="{Binding Detalle.Id}" HorizontalAlignment="Left"/>
                     <!--MoraId-->
                     <Label Content="MoraId" FontSize="11"/>
-                    <TextBox Name="MoraIdDetalleTextBox" Width="329" Height="20" Margin="5,0" Text="{Binding Detalle.MoraId}" HorizontalAlignment="Left"/>
+                    <TextBox Name="MoraIdDetalleTextBox" Width="301" Height="20" Margin="5,0" Text="{Binding Detalle.MoraId}" HorizontalAlignment="Left"/>
                     <!--PrestamoId-->
                     <Label Content="PrestamoId" FontSize="11"/>
-                    <TextBox Name="PrestamoIdTextBox" Width="329" Height="20" Margin="5,0" Text="{Binding Detalle.PrestamoId}" HorizontalAlignment="Left"/>
+                    <TextBox Name="PrestamoIdTextBox" Width="301" Height="20" Margin="5,0" Text="{Binding Detalle.PrestamoId}" HorizontalAlignment="Left"/>
                     <!--Label Valor-->
                     <Label Content="Valor" FontSize="11"/>
                     
                     <!--Stack Panel/Boton Agregar/Boton Remover-->
                     <StackPanel Orientation="Horizontal">
                         <!--TextBox Valor-->
-                        <TextBox Name="ValorTextBox" Width="170" Height="20" Margin="5,0" Text="{Binding Detalle.Valor}" HorizontalAlignment="Left" TextChanged="ValorTextBox_TextChanged"/>
+                        <TextBox Name="ValorTextBox" Width="143" Height="20" Margin="5,0" Text="{Binding Detalle.Valor}" HorizontalAlignment="Left" TextChanged="ValorTextBox_TextChanged"/>
                         <!--Boton Agregar-->
                         <Button Name="AgregarButton" Width="74" Height="20" Click="AgregarButton_Click">
                             <StackPanel Orientation="Horizontal">
@@ -64,7 +64,7 @@
                         </Button>
                     </StackPanel>
 
-                    <DataGrid Name="DetalleDataGrid" Height="100" HorizontalAlignment="Left" AutoGenerateColumns="False" Margin="5,5,5,0" ItemsSource="{Binding MorasDetalle}" Width="328">
+                    <DataGrid Name="DetalleDataGrid" Height="100" HorizontalAlignment="Left" AutoGenerateColumns="False" Margin="5,5,5,0" ItemsSource="{Binding MorasDetalle}" Width="301">
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="Id" Binding="{Binding Id}"/>
                             <DataGridTextColumn Header="MoraId" Binding="{Binding MoraId}"/>

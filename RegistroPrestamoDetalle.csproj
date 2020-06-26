@@ -11,6 +11,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="RegistroPrestamosDetalle\**" />
+    <EmbeddedResource Remove="RegistroPrestamosDetalle\**" />
+    <None Remove="RegistroPrestamosDetalle\**" />
+    <Page Remove="RegistroPrestamosDetalle\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Remove="Resources\agregar.png" />
     <None Remove="Resources\delete.png" />
     <None Remove="Resources\deuda.png" />
