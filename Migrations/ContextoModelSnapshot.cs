@@ -58,7 +58,7 @@ namespace RegistroPrestamoDetalle.Migrations
             modelBuilder.Entity("RegistroPrestamoDetalle.Entidades.MorasDetalle", b =>
                 {
                     b.HasOne("RegistroPrestamoDetalle.Entidades.Moras", null)
-                        .WithMany("MorasDetalles")
+                        .WithMany("MorasDetalle")
                         .HasForeignKey("MoraId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();

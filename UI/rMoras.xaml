@@ -13,7 +13,7 @@
             <!--Dentro de este Stack Panel se encuntra el Text Box MoraId y el boton Buscar MoraId-->
             <StackPanel Orientation="Horizontal">
                 <!--Text Box-->
-                <TextBox Name="MoraIdTextBox" Width="100" Height="20" Margin="5,0"/>
+                <TextBox Name="MoraIdTextBox" Width="100" Height="20" Text="{Binding MoraId}" Margin="5,0"/>
                 <!--Boton-->
                 <Button Name="BuscarMoraIdButton" Width="60" Height="20" Margin="5,0" Click="BuscarMoraIdButton_Click">
                     <StackPanel Orientation="Horizontal">
@@ -24,30 +24,30 @@
             </StackPanel>
 
             <Label Content="Fecha" FontSize="11"/>
-            <DatePicker Name="FechaDatePicker" Width="329" Height="20" Padding="-1" HorizontalAlignment="Left" Margin="5,0"/>
+            <DatePicker Name="FechaDatePicker" Width="329" Height="20" SelectedDate="{Binding Fecha}" Padding="-1" HorizontalAlignment="Left" Margin="5,0"/>
 
             <Label Content="Total" FontSize="11"/>
-            <TextBox Name="TotalTextBox" Width="329" Height="20" IsReadOnly="True" HorizontalAlignment="Left" Margin="5,0"/>
+            <TextBox Name="TotalTextBox" Width="329" Height="20" IsReadOnly="True" Text="{Binding Total}" HorizontalAlignment="Left" Margin="5,0"/>
             
             <!--Group Box de MorasDetalle-->
             <GroupBox Header="Detalles de Moras" BorderBrush="#FF414649" HorizontalAlignment="Left" Margin="5,10,5,0" Width="353">
                 <StackPanel Orientation="Vertical">
                     <!--Id-->
                     <Label Content="Id" FontSize="11"/>
-                    <TextBox Name="IdTextBox" Width="329" Height="20" Margin="5,0" HorizontalAlignment="Left"/>
+                    <TextBox Name="IdTextBox" Width="329" Height="20" Margin="5,0" Text="{Binding Detalle.Id}" HorizontalAlignment="Left"/>
                     <!--MoraId-->
                     <Label Content="MoraId" FontSize="11"/>
-                    <TextBox Name="MoraIdDetalleTextBox" Width="329" Height="20" Margin="5,0" HorizontalAlignment="Left"/>
+                    <TextBox Name="MoraIdDetalleTextBox" Width="329" Height="20" Margin="5,0" Text="{Binding Detalle.MoraId}" HorizontalAlignment="Left"/>
                     <!--PrestamoId-->
                     <Label Content="PrestamoId" FontSize="11"/>
-                    <TextBox Name="PrestamoIdTextBox" Width="329" Height="20" Margin="5,0" HorizontalAlignment="Left"/>
+                    <TextBox Name="PrestamoIdTextBox" Width="329" Height="20" Margin="5,0" Text="{Binding Detalle.PrestamoId}" HorizontalAlignment="Left"/>
                     <!--Label Valor-->
                     <Label Content="Valor" FontSize="11"/>
                     
                     <!--Stack Panel/Boton Agregar/Boton Remover-->
                     <StackPanel Orientation="Horizontal">
                         <!--TextBox Valor-->
-                        <TextBox Name="ValorTextBox" Width="170" Height="20" Margin="5,0" HorizontalAlignment="Left"/>
+                        <TextBox Name="ValorTextBox" Width="170" Height="20" Margin="5,0" Text="{Binding Detalle.Valor}" HorizontalAlignment="Left" TextChanged="ValorTextBox_TextChanged"/>
                         <!--Boton Agregar-->
                         <Button Name="AgregarButton" Width="74" Height="20" Click="AgregarButton_Click">
                             <StackPanel Orientation="Horizontal">
@@ -69,7 +69,7 @@
                             <DataGridTextColumn Header="Id" Binding="{Binding Id}"/>
                             <DataGridTextColumn Header="MoraId" Binding="{Binding MoraId}"/>
                             <DataGridTextColumn Header="PrestamoId" Binding="{Binding PrestamoId}"/>
-                            <DataGridTextColumn Header="Valor" Binding="{Binding Valor}"/>
+                            <DataGridTextColumn Header="Valor" IsReadOnly="True" Binding="{Binding Valor}"/>
                         </DataGrid.Columns>
                     </DataGrid>
                     
